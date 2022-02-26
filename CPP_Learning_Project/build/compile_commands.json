@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8  -DGLUT_DISABLE_ATEXIT_HACK  -g   -Wall -Wextra -Werror -Wshadow -Wno-deprecated -std=gnu++17 -o CMakeFiles/tower.dir/src/GL/opengl_interface.cpp.o -c /home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/GL/opengl_interface.cpp",
+  "file": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/GL/opengl_interface.cpp"
+},
+{
+  "directory": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8  -DGLUT_DISABLE_ATEXIT_HACK  -g   -Wall -Wextra -Werror -Wshadow -Wno-deprecated -std=gnu++17 -o CMakeFiles/tower.dir/src/img/image.cpp.o -c /home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/img/image.cpp",
+  "file": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/img/image.cpp"
+},
+{
+  "directory": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8  -DGLUT_DISABLE_ATEXIT_HACK  -g   -Wall -Wextra -Werror -Wshadow -Wno-deprecated -std=gnu++17 -o CMakeFiles/tower.dir/src/aircraft.cpp.o -c /home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/aircraft.cpp",
+  "file": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/aircraft.cpp"
+},
+{
+  "directory": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8  -DGLUT_DISABLE_ATEXIT_HACK  -g   -Wall -Wextra -Werror -Wshadow -Wno-deprecated -std=gnu++17 -o CMakeFiles/tower.dir/src/tower_sim.cpp.o -c /home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/tower_sim.cpp",
+  "file": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/tower_sim.cpp"
+},
+{
+  "directory": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8  -DGLUT_DISABLE_ATEXIT_HACK  -g   -Wall -Wextra -Werror -Wshadow -Wno-deprecated -std=gnu++17 -o CMakeFiles/tower.dir/src/tower.cpp.o -c /home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/tower.cpp",
+  "file": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/tower.cpp"
+},
+{
+  "directory": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8  -DGLUT_DISABLE_ATEXIT_HACK  -g   -Wall -Wextra -Werror -Wshadow -Wno-deprecated -std=gnu++17 -o CMakeFiles/tower.dir/src/main.cpp.o -c /home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/main.cpp",
+  "file": "/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/src/main.cpp"
+}
+]
