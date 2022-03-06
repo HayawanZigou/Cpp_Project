@@ -13,7 +13,7 @@ private:
     Airport* airport = nullptr;
     
     AircraftManager aircraft_manager;  // TASK_1 C
-    AircraftFactory aircraft_factory;
+    AircraftFactory aircraft_factory;  //TASK_1 Obj-2 A
     
     TowerSimulation(const TowerSimulation&) = delete;
     TowerSimulation& operator=(const TowerSimulation&) = delete;

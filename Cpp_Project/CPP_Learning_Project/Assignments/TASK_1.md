@@ -93,11 +93,19 @@ A quelle ligne faut-il définir `context_initializer` dans `TowerSimulation` pou
 Refactorisez le restant du code pour utiliser votre factory.
 Vous devriez du coup pouvoir supprimer les variables globales `airlines` et `aircraft_types`.
 
+-Creation du fichier aircraft_factory.hpp contenant la classe AircraftFactory.
+-Ajout des fonctions create_aircraft, create_random_aircraft, airlines, aircraft_types ainsi que des attributs aircraft_types et airlines.
+-On ajoute dans le fichier tower_sim.hpp un attribut de type AircraftFactory qu'on utilisera pour créer des avions.
+-On remplace toutes les fonctions concernant la création d'avion du fichier tower_sim.hpp par celles de l'attribut de type AircraftFactory.
+-On retire/met en commentaire toutes les fonctions désormais inutilisées.
+
 ### B - Conflits
 
 Il est rare, mais possible, que deux avions soient créés avec le même numéro de vol.
 Ajoutez un conteneur dans votre classe `AircraftFactory` contenant tous les numéros de vol déjà utilisés.
 Faites maintenant en sorte qu'il ne soit plus possible de créer deux fois un avion avec le même numéro de vol.
+
+On verifie à chaque fois qu'un numéro de vol est généré, que celui çi n'a pas déjà été crée en verifiant s'il n'est pas présent dans le conteneur des numéros de vol.
 
 ### C - Data-driven AircraftType (optionnel)
 
