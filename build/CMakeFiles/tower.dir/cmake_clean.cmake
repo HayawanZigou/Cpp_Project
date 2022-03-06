@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tower.dir/src/GL/opengl_interface.cpp.obj.d"
   "CMakeFiles/tower.dir/src/aircraft.cpp.obj"
   "CMakeFiles/tower.dir/src/aircraft.cpp.obj.d"
+  "CMakeFiles/tower.dir/src/aircraft_manager.cpp.obj"
+  "CMakeFiles/tower.dir/src/aircraft_manager.cpp.obj.d"
   "CMakeFiles/tower.dir/src/img/image.cpp.obj"
   "CMakeFiles/tower.dir/src/img/image.cpp.obj.d"
   "CMakeFiles/tower.dir/src/main.cpp.obj"

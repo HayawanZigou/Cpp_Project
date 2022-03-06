@@ -1,3 +1,0 @@
-/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build/CMakeFiles/rebuild_cache.dir
-/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build/CMakeFiles/tower.dir
-/home/2inf1/mehdi.hassani/Documents/C++/CPP_Learning_Project/build/CMakeFiles/edit_cache.dir

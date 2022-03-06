@@ -59,7 +59,7 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\ACER\Desktop\C++\Projet\CPP_Learning_Project
+CMAKE_SOURCE_DIR = C:\Users\ACER\Desktop\C++\Projet\Cpp_Project\CPP_Learning_Project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = C:\Users\ACER\Desktop\C++\Projet\build
@@ -179,6 +179,30 @@ src/aircraft.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\tower.dir\build.make CMakeFiles/tower.dir/src/aircraft.cpp.s
 .PHONY : src/aircraft.cpp.s
 
+src/aircraft_manager.obj: src/aircraft_manager.cpp.obj
+.PHONY : src/aircraft_manager.obj
+
+# target to build an object file
+src/aircraft_manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tower.dir\build.make CMakeFiles/tower.dir/src/aircraft_manager.cpp.obj
+.PHONY : src/aircraft_manager.cpp.obj
+
+src/aircraft_manager.i: src/aircraft_manager.cpp.i
+.PHONY : src/aircraft_manager.i
+
+# target to preprocess a source file
+src/aircraft_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tower.dir\build.make CMakeFiles/tower.dir/src/aircraft_manager.cpp.i
+.PHONY : src/aircraft_manager.cpp.i
+
+src/aircraft_manager.s: src/aircraft_manager.cpp.s
+.PHONY : src/aircraft_manager.s
+
+# target to generate assembly for a file
+src/aircraft_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tower.dir\build.make CMakeFiles/tower.dir/src/aircraft_manager.cpp.s
+.PHONY : src/aircraft_manager.cpp.s
+
 src/img/image.obj: src/img/image.cpp.obj
 .PHONY : src/img/image.obj
 
@@ -290,6 +314,9 @@ help:
 	@echo ... src/aircraft.obj
 	@echo ... src/aircraft.i
 	@echo ... src/aircraft.s
+	@echo ... src/aircraft_manager.obj
+	@echo ... src/aircraft_manager.i
+	@echo ... src/aircraft_manager.s
 	@echo ... src/img/image.obj
 	@echo ... src/img/image.i
 	@echo ... src/img/image.s

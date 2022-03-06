@@ -1,8 +1,8 @@
 CMakeFiles/tower.dir/src/GL/opengl_interface.cpp.obj: \
- C:\Users\ACER\Desktop\C++\Projet\CPP_Learning_Project\src\GL\opengl_interface.cpp \
- C:\Users\ACER\Desktop\C++\Projet\CPP_Learning_Project\src\GL\opengl_interface.hpp \
- C:/Users/ACER/Desktop/C++/Projet/CPP_Learning_Project/src/config.hpp \
- C:/Users/ACER/Desktop/C++/Projet/CPP_Learning_Project/src/img/media_path.hpp \
+ C:\Users\ACER\Desktop\C++\Projet\Cpp_Project\CPP_Learning_Project\src\GL\opengl_interface.cpp \
+ C:\Users\ACER\Desktop\C++\Projet\Cpp_Project\CPP_Learning_Project\src\GL\opengl_interface.hpp \
+ C:/Users/ACER/Desktop/C++/Projet/Cpp_Project/CPP_Learning_Project/src/config.hpp \
+ C:/Users/ACER/Desktop/C++/Projet/Cpp_Project/CPP_Learning_Project/src/img/media_path.hpp \
  C:/msys64/mingw64/include/c++/11.2.0/filesystem \
  C:/msys64/mingw64/include/c++/11.2.0/bits/fs_fwd.h \
  C:/msys64/mingw64/include/c++/11.2.0/system_error \
@@ -193,7 +193,7 @@ CMakeFiles/tower.dir/src/GL/opengl_interface.cpp.obj: \
  C:/msys64/mingw64/include/c++/11.2.0/pstl/execution_defs.h \
  C:/msys64/mingw64/include/c++/11.2.0/bits/fs_dir.h \
  C:/msys64/mingw64/include/c++/11.2.0/bits/fs_ops.h \
- C:/Users/ACER/Desktop/C++/Projet/CPP_Learning_Project/src/geometry.hpp \
+ C:/Users/ACER/Desktop/C++/Projet/Cpp_Project/CPP_Learning_Project/src/geometry.hpp \
  C:/msys64/mingw64/include/c++/11.2.0/cassert \
  C:/msys64/mingw64/x86_64-w64-mingw32/include/assert.h \
  C:/msys64/mingw64/include/c++/11.2.0/cmath \
@@ -212,8 +212,8 @@ CMakeFiles/tower.dir/src/GL/opengl_interface.cpp.obj: \
  C:/msys64/mingw64/include/c++/11.2.0/tr1/poly_laguerre.tcc \
  C:/msys64/mingw64/include/c++/11.2.0/tr1/riemann_zeta.tcc \
  C:/msys64/mingw64/include/c++/11.2.0/iostream \
- C:\Users\ACER\Desktop\C++\Projet\CPP_Learning_Project\src\GL\displayable.hpp \
- C:\Users\ACER\Desktop\C++\Projet\CPP_Learning_Project\src\GL\dynamic_object.hpp \
+ C:\Users\ACER\Desktop\C++\Projet\Cpp_Project\CPP_Learning_Project\src\GL\displayable.hpp \
+ C:\Users\ACER\Desktop\C++\Projet\Cpp_Project\CPP_Learning_Project\src\GL\dynamic_object.hpp \
  C:/msys64/mingw64/include/c++/11.2.0/unordered_set \
  C:/msys64/mingw64/include/c++/11.2.0/bits/unordered_set.h \
  C:/msys64/mingw64/include/GL/freeglut.h \

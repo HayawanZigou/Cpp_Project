@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ACER/Desktop/C++/Projet/CPP_Learning_Project
+# Install script for directory: C:/Users/ACER/Desktop/C++/Projet/Cpp_Project/CPP_Learning_Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
