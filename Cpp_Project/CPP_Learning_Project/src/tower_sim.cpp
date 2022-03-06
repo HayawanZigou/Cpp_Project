@@ -13,7 +13,8 @@
 
 using namespace std::string_literals;
 
-const std::string airlines[8] = { "AF", "LH", "EY", "DL", "KL", "BA", "AY", "EY" };
+//TASK_1 Obj-2 A: présent dans aircraft_factory.hpp.
+//const std::string airlines[8] = { "AF", "LH", "EY", "DL", "KL", "BA", "AY", "EY" };
 
 TowerSimulation::TowerSimulation(int argc, char** argv) :
     help { (argc > 1) && (std::string { argv[1] } == "--help"s || std::string { argv[1] } == "-h"s) }
@@ -35,31 +36,32 @@ TowerSimulation::~TowerSimulation()
     delete airport;
 }
 
-void TowerSimulation::create_aircraft(const AircraftType& type) /*const*/
-{
-    assert(airport); // make sure the airport is initialized before creating aircraft
+//TASK_1 Obj-2 A
+// void TowerSimulation::create_aircraft(const AircraftType& type) /*const*/
+// {
+//     assert(airport); // make sure the airport is initialized before creating aircraft
 
-    const std::string flight_number = airlines[std::rand() % 8] + std::to_string(1000 + (rand() % 9000));
-    const float angle       = (rand() % 1000) * 2 * 3.141592f / 1000.f; // random angle between 0 and 2pi
-    const Point3D start     = Point3D { std::sin(angle), std::cos(angle), 0 } * 3 + Point3D { 0, 0, 2 };
-    const Point3D direction = (-start).normalize();
+//     const std::string flight_number = airlines[std::rand() % 8] + std::to_string(1000 + (rand() % 9000));
+//     const float angle       = (rand() % 1000) * 2 * 3.141592f / 1000.f; // random angle between 0 and 2pi
+//     const Point3D start     = Point3D { std::sin(angle), std::cos(angle), 0 } * 3 + Point3D { 0, 0, 2 };
+//     const Point3D direction = (-start).normalize();
 
-    Aircraft* aircraft = new Aircraft { type, flight_number, start, direction, airport->get_tower() };
-    GL::Displayable::display_queue.emplace_back(aircraft);
-    aircraft_manager.add(std::unique_ptr<Aircraft>(aircraft));//TASK_1 C: On ajoute l'avion dans le manager des avions.
-    //GL::move_queue.emplace(aircraft);
-}
+//     Aircraft* aircraft = new Aircraft { type, flight_number, start, direction, airport->get_tower() };
+//     GL::Displayable::display_queue.emplace_back(aircraft);
+//     aircraft_manager.add(std::unique_ptr<Aircraft>(aircraft));//TASK_1 C: On ajoute l'avion dans le manager des avions.
+//     //GL::move_queue.emplace(aircraft);
+// }
 
-void TowerSimulation::create_random_aircraft() /*const*/
-{
-    create_aircraft(*(aircraft_types[rand() % 3]));
-}
+// void TowerSimulation::create_random_aircraft() /*const*/
+// {
+//     create_aircraft(*(aircraft_types[rand() % 3]));
+// }
 
 void TowerSimulation::create_keystrokes() /*const*/
 {
     GL::keystrokes.emplace('x', []() { GL::exit_loop(); });
     GL::keystrokes.emplace('q', []() { GL::exit_loop(); });
-    GL::keystrokes.emplace('c', [this]() { create_random_aircraft(); });
+    GL::keystrokes.emplace('c', [this]() { aircraft_manager.add(aircraft_factory.create_random_aircraft(airport));}); //TASK_1 Obj-2 A
     GL::keystrokes.emplace('+', []() { GL::change_zoom(0.95f); });
     GL::keystrokes.emplace('-', []() { GL::change_zoom(1.05f); });
     GL::keystrokes.emplace('f', []() { GL::toggle_fullscreen(); });
@@ -99,7 +101,9 @@ void TowerSimulation::launch()
     }
 
     init_airport();
-    init_aircraft_types();
+    //init_aircraft_types();
+    //TASK_1 Obj-2 A
+    aircraft_factory.init_aircraft_types();
 
     GL::loop();
 }
