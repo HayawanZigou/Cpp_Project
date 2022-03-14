@@ -13,3 +13,13 @@ bool AircraftManager::move()
     }
     return true;
 }
+
+std::unique_ptr<Aircraft> AircraftManager::create_random_aircraft(Airport* airport)
+{   
+    return aircraft_factory.create_random_aircraft(airport);
+}
+
+void AircraftManager::init_aircraft_types()
+{
+    aircraft_factory.init_aircraft_types();
+}

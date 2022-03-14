@@ -93,10 +93,15 @@ A quelle ligne faut-il définir `context_initializer` dans `TowerSimulation` pou
 Refactorisez le restant du code pour utiliser votre factory.
 Vous devriez du coup pouvoir supprimer les variables globales `airlines` et `aircraft_types`.
 
+
 -Creation du fichier aircraft_factory.hpp contenant la classe AircraftFactory.
+
 -Ajout des fonctions create_aircraft, create_random_aircraft, airlines, aircraft_types ainsi que des attributs aircraft_types et airlines.
--On ajoute dans le fichier tower_sim.hpp un attribut de type AircraftFactory qu'on utilisera pour créer des avions.
--On remplace toutes les fonctions concernant la création d'avion du fichier tower_sim.hpp par celles de l'attribut de type AircraftFactory.
+
+-On ajoute dans le fichier aircraft_manager.hpp un attribut de type AircraftFactory qu'on utilisera pour créer des avions (On met tout le code concernant la gestion des avions dans une même classe qui est AircraftManager).
+
+-On remplace toutes les fonctions concernant la création d'avion du fichier tower_sim.hpp par celles de l'attribut de type AircraftManager(qui appelera quant à elle les fonctions de la classe AircraftFactory).
+
 -On retire/met en commentaire toutes les fonctions désormais inutilisées.
 
 ### B - Conflits
