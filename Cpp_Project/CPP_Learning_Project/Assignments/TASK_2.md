@@ -7,6 +7,8 @@
 `TowerSimulation::display_help()` est chargé de l'affichage des touches disponibles.
 Dans sa boucle, remplacez `const auto& ks_pair` par un structured binding adapté.
 
+On remplace `const auto& ks_pair` par `const auto& [key, value]`.
+
 ### B - Algorithmes divers
 
 1. `AircraftManager::move()` (ou bien `update()`) supprime les avions de la `move_queue` dès qu'ils sont "hors jeux".
@@ -19,6 +21,9 @@ Remplacez votre boucle avec un appel à `std::remove_if`.
 A cette fin, rajoutez des callbacks sur les touches `0`..`7` de manière à ce que le nombre d'avions appartenant à `airlines[x]` soit affiché en appuyant sur `x`.
 Rendez-vous compte de quelle classe peut acquérir cet information. Utilisez la bonne fonction de `<algorithm>` pour obtenir le résultat.
 
+On utilise une fonction `number_aircraft_by_airline` qui permet d'avoir cette information dans la classe `AircraftManager`. 
+Cette fonction est ajoutée dans la fonction `TowerSimulation::create_keystrokes()`.
+
 ### C - Relooking de Point3D
 
 La classe `Point3D` présente beaucoup d'opportunités d'appliquer des algorithmes.
@@ -29,6 +34,8 @@ remplacez le code des fonctions suivantes en utilisant des fonctions de `<algori
 1. `Point3D::operator*=(const float scalar)`
 2. `Point3D::operator+=(const Point3D& other)` et `Point3D::operator-=(const Point3D& other)`
 3. `Point3D::length() const`
+
+On utilise la fonction `std::transform` pour les fonctions `Point3D::operator*=`, `Point3D::operator+=` et `Point3D::operator-=` et la fonction `std::inner_product` pour `Point3D::length()`. 
 
 ---
 

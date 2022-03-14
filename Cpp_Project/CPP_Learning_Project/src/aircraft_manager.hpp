@@ -28,4 +28,8 @@ public:
 
     void init_aircraft_types();
 
+    std::string airline(int index);
+    
+    void number_aircraft_by_airline(const std::string& airline);
+
 };

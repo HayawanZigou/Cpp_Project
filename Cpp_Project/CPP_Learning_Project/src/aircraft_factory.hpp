@@ -57,7 +57,6 @@ public:
 
     std::string airline(int index)
     {
-        assert(index > 0 && index < 8);
         return airlines[index];
     }
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <algorithm>
+#include <numeric>
 #include <array>
 #include <cassert>
 #include <cmath>
@@ -64,8 +65,8 @@ struct Point2D
 
 struct Point3D
 {
-    float values[3] {};
-
+    //float values[3] {};
+    std::array<float, 3> values;
     Point3D() {}
     Point3D(float x, float y, float z) : values { x, y, z } {}
 
@@ -80,25 +81,39 @@ struct Point3D
 
     Point3D& operator+=(const Point3D& other)
     {
-        x() += other.x();
-        y() += other.y();
-        z() += other.z();
+        // x() += other.x();
+        // y() += other.y();
+        // z() += other.z();
+        // return *this;
+
+        //TASK_2 Obj-1 C
+        int i=0;
+        std::transform(values.begin(), values.end(), values.begin(), [&other, &i](float v){return v + other.values[i++];});
         return *this;
     }
 
     Point3D& operator-=(const Point3D& other)
     {
-        x() -= other.x();
-        y() -= other.y();
-        z() -= other.z();
+        // x() -= other.x();
+        // y() -= other.y();
+        // z() -= other.z();
+        // return *this;
+
+        //TASK_2 Obj-1 C
+        int i=0;
+        std::transform(values.begin(), values.end(), values.begin(), [&other, &i](float v){return v - other.values[i++];});
         return *this;
     }
 
     Point3D& operator*=(const float scalar)
     {
-        x() *= scalar;
-        y() *= scalar;
-        z() *= scalar;
+        // x() *= scalar;
+        // y() *= scalar;
+        // z() *= scalar;
+        // return *this;
+
+        //TASK_2 Obj-1 C
+        std::transform(values.begin(), values.end(), values.begin(), [scalar](float v){return v * scalar;});
         return *this;
     }
 
@@ -125,7 +140,12 @@ struct Point3D
 
     Point3D operator-() const { return Point3D { -x(), -y(), -z() }; }
 
-    float length() const { return std::sqrt(x() * x() + y() * y() + z() * z()); }
+    float length() const { 
+        //return std::sqrt(x() * x() + y() * y() + z() * z()); 
+
+        //TASK_2 Obj-1 C
+        return std::sqrt(std::inner_product(values.begin(), values.end(), values.begin(), 0.f));
+    }
 
     float distance_to(const Point3D& other) const { return (*this - other).length(); }
 
