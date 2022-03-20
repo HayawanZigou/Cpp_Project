@@ -99,7 +99,24 @@ bool Aircraft::move()
     }
 
     if (!is_at_terminal)
-    {
+    {   
+        //TASK_2 Obj-2 A: On décrémente la variable correspondant au carburant quand l'avion est en vol et on gere le cas où un avion n'a plus de carburant.
+
+        if( fuel <= 0){
+            std::cout << "Aircraft " << flight_number << " crashed" << std::endl;
+            //throw AircraftCrash { flight_number + " crashed " };
+            return false;
+        }
+
+        //TASK_2 Obj-2 B.4: Si l'avion est en attente d'un terminal, on en lui attribue un si cela est possible.
+        if(is_circling()){
+            
+            auto newWaypoints =  control.reserve_terminal(*this);
+            if(!newWaypoints.empty()){
+                waypoints = std::move(newWaypoints);
+            }     
+        }
+
         turn_to_waypoint();
         // move in the direction of the current speed
         pos += speed;
@@ -127,7 +144,9 @@ bool Aircraft::move()
             }
         }
         else
-        {
+        {   
+            fuel--; //TASK_2 Obj-2 A
+            
             // if we are in the air, but too slow, then we will sink!
             const float speed_len = speed.length();
             if (speed_len < SPEED_THRESHOLD)
@@ -145,4 +164,17 @@ bool Aircraft::move()
 void Aircraft::display() const
 {
     type.texture.draw(project_2D(pos), { PLANE_TEXTURE_DIM, PLANE_TEXTURE_DIM }, get_speed_octant());
+}
+
+
+//TASK_2 Obj-2 B.1
+bool Aircraft::has_terminal() const
+{
+    return !waypoints.empty() && waypoints.back().is_at_terminal(); // Si le dernier waypoint (si les waypoints existent) est à un terminal.
+};
+
+//TASK_2 Obj-2 B.2
+bool Aircraft::is_circling() const
+{   
+   return !has_terminal() && !is_at_terminal && !service_done; // Pas de terminal attribué, pas à un terminal et service non effectué.
 }

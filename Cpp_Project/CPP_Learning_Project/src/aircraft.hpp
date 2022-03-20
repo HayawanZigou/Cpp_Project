@@ -20,6 +20,8 @@ private:
     Tower& control;
     bool landing_gear_deployed = false; // is the landing gear deployed?
     bool is_at_terminal        = false;
+    
+    int fuel; //TASK_2 Obj-2 A
 
     // TASK-0 C-3
     // L'endroit le plus approprié pour retirer l'avion, c'est lorsque :
@@ -61,6 +63,7 @@ public:
         control { control_ }
     {
         speed.cap_length(max_speed());
+        fuel = MIN_FUEL + (std::rand()  % (MAX_FUEL - MIN_FUEL)); //TASK_2 Obj-2 A
     }
 
     const std::string& get_flight_num() const { return flight_number; }
@@ -68,6 +71,10 @@ public:
 
     void display() const override;
     bool move() override;
+
+    bool has_terminal() const; //TASK_2 Obj-2 B.1
+
+    bool is_circling() const; //TASK_2 Obj-2 B.2
 
     friend class Tower;
 };
