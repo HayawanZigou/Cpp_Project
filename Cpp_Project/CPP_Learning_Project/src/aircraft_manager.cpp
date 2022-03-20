@@ -7,7 +7,20 @@ void AircraftManager::add(std::unique_ptr<Aircraft> aircraft)
 
 // TASK_1 C
 bool AircraftManager::move()
-{
+{   
+    // TASK_2 Obj-2 C
+    std::sort(aircrafts.begin(), aircrafts.end(), [](auto& aircraft1, auto& aircraft2){
+        if(aircraft1->has_terminal()&& !aircraft2->has_terminal()){
+            return true;
+        }
+
+        if (!aircraft1->has_terminal() && aircraft2->has_terminal()){
+            return false;
+        }
+
+        return aircraft1->get_fuel() < aircraft2->get_fuel();
+    });
+
     // TASK_2 Obj-1 B.1
     aircrafts.erase(std::remove_if(aircrafts.begin(), aircrafts.end(), [](auto& aircraft){
         return !aircraft->move();

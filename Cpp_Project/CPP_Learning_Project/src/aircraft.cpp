@@ -178,3 +178,8 @@ bool Aircraft::is_circling() const
 {   
    return !has_terminal() && !is_at_terminal && !service_done; // Pas de terminal attribué, pas à un terminal et service non effectué.
 }
+
+int Aircraft::get_fuel() const 
+{
+    return fuel;
+}
