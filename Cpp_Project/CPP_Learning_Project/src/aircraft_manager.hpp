@@ -32,4 +32,6 @@ public:
     
     void number_aircraft_by_airline(const std::string& airline);
 
+    int get_required_fuel() const;
+
 };

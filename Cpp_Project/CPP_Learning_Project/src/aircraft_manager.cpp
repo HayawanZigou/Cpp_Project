@@ -50,3 +50,17 @@ void AircraftManager::number_aircraft_by_airline(const std::string& airline){
     });
     std::cout << "number of " << airline << ": "<< counter << std::endl;
 }
+
+// TASK_2 Obj-1 D.2
+int AircraftManager::get_required_fuel() const{
+    int sum = 0;
+
+    std::for_each(aircrafts.begin(),aircrafts.end(),[&sum](auto& aircraft){
+
+        if(aircraft->is_low_on_fuel() && aircraft->at_terminal()){
+            sum += 3000 - aircraft->get_fuel();
+        }
+    });
+    
+    return sum;
+}

@@ -78,5 +78,11 @@ public:
 
     int get_fuel() const; //TASK_2 Obj-2 C
 
+    bool is_low_on_fuel() const; //TASK_2 Obj-2 D.1
+
+    bool at_terminal() const; //TASK_2 Obj-2 D.2
+
+    void refill(int& fuel_stock); //TASK_2 Obj-2 D.4
+
     friend class Tower;
 };
