@@ -76,7 +76,9 @@ void Aircraft::operate_landing_gear()
     }
 }
 
-void Aircraft::add_waypoint(const Waypoint& wp, const bool front)
+//TASK_4 Obj-1.2: Pour que l'evaluation ait lieu à la compilation, il faut passer le flag en template plutôt qu'en parametre de la fonction.
+template <bool front>
+void Aircraft::add_waypoint(const Waypoint& wp)
 {
     if (front)
     {
@@ -92,10 +94,14 @@ bool Aircraft::move()
 {
     if (waypoints.empty())
     {
-        if (service_done){// TASK-0 C-4: si entretien déja effectué, pas de nouvelle instruction à donner.
+        if (service_done) {// TASK_0 C-4: si entretien déja effectué, pas de nouvelle instruction à donner.
             return false;
         }
-        waypoints = control.get_instructions(*this);
+        const auto front = false;
+        for (const auto& wp: control.get_instructions(*this)) //TASK_4 Obj-1.1
+        {
+            add_waypoint<front>(wp);
+        }
     }
 
     if (!is_at_terminal)
