@@ -103,9 +103,7 @@ bool Aircraft::move()
         //TASK_2 Obj-2 A: On décrémente la variable correspondant au carburant quand l'avion est en vol et on gere le cas où un avion n'a plus de carburant.
 
         if( fuel <= 0){
-            std::cout << "Aircraft " << flight_number << " crashed" << std::endl;
-            //throw AircraftCrash { flight_number + " crashed " };
-            return false;
+            throw AircraftCrash { "Aircraft " + flight_number + " crashed due to fuel" }; // TASK_3 Obj-1.3
         }
 
         //TASK_2 Obj-2 B.4: Si l'avion est en attente d'un terminal, on en lui attribue un si cela est possible.
@@ -199,7 +197,8 @@ bool Aircraft::at_terminal() const
 
 //TASK_2 Obj-2 D.4
 void Aircraft::refill(int& fuel_stock)
-{
+{   
+    assert(fuel_stock >= 0);
     int to_add = MAX_FUEL - fuel;
     int to_refill;
 

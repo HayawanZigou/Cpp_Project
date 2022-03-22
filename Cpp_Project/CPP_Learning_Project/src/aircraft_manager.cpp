@@ -22,8 +22,14 @@ bool AircraftManager::move()
     });
 
     // TASK_2 Obj-1 B.1
-    aircrafts.erase(std::remove_if(aircrafts.begin(), aircrafts.end(), [](auto& aircraft){
-        return !aircraft->move();
+    aircrafts.erase(std::remove_if(aircrafts.begin(), aircrafts.end(), [this](auto& aircraft){
+        try{
+            return !aircraft->move();
+        }catch(AircraftCrash& e){
+            this->aircrafts_crashed++; // TASK_3 Obj-1.2
+            std::cerr << e.what() <<std::endl;// TASK_3 Obj-1.1
+            return true;
+        }
     }), aircrafts.end());
     return true;
 }
@@ -63,4 +69,8 @@ int AircraftManager::get_required_fuel() const{
     });
     
     return sum;
+}
+// TASK_3 Obj-1.2 
+void AircraftManager::number_of_crashed_aircrafts() const {
+    std::cout << "Number of aircraft that crashed: " << aircrafts_crashed << std::endl;
 }

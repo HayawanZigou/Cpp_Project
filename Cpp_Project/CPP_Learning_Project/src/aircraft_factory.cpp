@@ -29,7 +29,8 @@ std::unique_ptr<Aircraft> AircraftFactory::create_aircraft(const AircraftType& t
 
 
     std::string AircraftFactory::airline(int index)
-    {
+    {   
+        assert(index >= 0 && index < 8);
         return airlines[index];
     }
 

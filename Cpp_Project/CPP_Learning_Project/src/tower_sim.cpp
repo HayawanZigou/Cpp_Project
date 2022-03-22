@@ -68,6 +68,7 @@ void TowerSimulation::create_keystrokes() /*const*/
     GL::keystrokes.emplace('a', []() { GL::faster(); });
     GL::keystrokes.emplace('s', []() { GL::slower(); });
     GL::keystrokes.emplace('p', []() { GL::pause(); });
+    GL::keystrokes.emplace('m', [this]() { aircraft_manager.number_of_crashed_aircrafts();}); // TASK_3 Obj-1.2
 
     // TASK_2 Obj-1 B.2
     for (int i = 0; i < 8; i++)

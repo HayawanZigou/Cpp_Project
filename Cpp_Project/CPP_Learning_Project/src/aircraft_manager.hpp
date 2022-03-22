@@ -15,6 +15,8 @@ private:
     
     AircraftFactory aircraft_factory;
 
+    int aircrafts_crashed = 0;
+
 public:
     
     AircraftManager()=default;
@@ -33,5 +35,7 @@ public:
     void number_aircraft_by_airline(const std::string& airline);
 
     int get_required_fuel() const;
+
+    void number_of_crashed_aircrafts() const;
 
 };
