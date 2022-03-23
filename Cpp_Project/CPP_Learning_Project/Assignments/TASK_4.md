@@ -62,10 +62,10 @@ Modifiez `Point2D` et `Point3D` afin d'en faire des alias sur des classes géné
 Vérifiez que votre programme compile et fonctionne comme avant.
 
 4. Dans la fonction `test_generic_points`, essayez d'instancier un `Point2D` avec 3 arguments.
-Que se passe-t-il ?
-Comment pourriez-vous expliquer que cette erreur ne se produise que maintenant ?
+Que se passe-t-il ? Une erreur s'affiche indiquant que le nombre de parametres est superieur au nombre qu'il devrait être (ici 2).
+Comment pourriez-vous expliquer que cette erreur ne se produise que maintenant ? 
 
-5. Que se passe-t-il maintenant si vous essayez d'instancier un `Point3D` avec 2 arguments ?
+5. Que se passe-t-il maintenant si vous essayez d'instancier un `Point3D` avec 2 arguments ? Le programme ne plante pas car il utilise le constructeur à 2 parametres (celui de Point2D).
 Utilisez un `static_assert` afin de vous assurez que personne ne puisse initialiser un `Point3D` avec seulement deux éléments.
 Faites en de même dans les fonctions `y()` et `z()`, pour vérifier que l'on ne puisse pas les appeler sur des `Point` qui n'ont pas la dimension minimale requise.
 
