@@ -205,14 +205,14 @@ bool Aircraft::at_terminal() const
 void Aircraft::refill(int& fuel_stock)
 {   
     assert(fuel_stock >= 0);
-    int to_add = MAX_FUEL - fuel;
-    int to_refill;
+    int to_refill = MAX_FUEL - fuel;
 
-    to_refill = to_add < fuel_stock ? to_add : fuel_stock;
+    to_refill = to_refill < fuel_stock ? to_refill : fuel_stock;
 
     fuel_stock -= to_refill;
     fuel += to_refill;
-
-    std::cout << flight_number << " refueled to "<< fuel <<" | fuel stock remaining: "<< fuel_stock << std::endl;
+    if (!is_low_on_fuel()){
+        std::cout << flight_number << " refueled to "<< fuel <<" | fuel used: "<< to_refill << std::endl;
+    }
 }
 

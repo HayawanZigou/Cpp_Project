@@ -80,20 +80,19 @@ public:
         
         if(next_refill_time == 0) {
             fuel_stock += ordered_fuel;
-            std::cout << "received fuel : " << ordered_fuel << std::endl;
+            std::cout << "Received fuel : " << ordered_fuel << std::endl;
             ordered_fuel = std::min(aircraft_manager->get_required_fuel(), KEROSENE_DELIVERED);
-            next_refill_time = 100;
             std::cout << "Fuel stock : " << fuel_stock << std::endl;
             std::cout << "Ordered fuel : " << ordered_fuel << std::endl;
+            next_refill_time = 100;
         }
         
         else {
             next_refill_time-=1;
-        }
-        
-        for(auto& t: terminals){
-            t.refill_aircraft_if_needed(fuel_stock);
-            t.move();
+            for(auto& t: terminals){
+                t.refill_aircraft_if_needed(fuel_stock);
+                t.move();
+            }
         }
         
         return true;

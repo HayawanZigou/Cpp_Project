@@ -41,7 +41,7 @@ public:
 
     bool move() override
     {   
-        //TASK_2 Obj-2 D: On ajoute la condition que l'avion n'est pas un niveau de carburant faible.
+        //TASK_2 Obj-2 D.1: On ajoute la condition que l'avion n'est pas à un niveau de carburant faible.
         if (in_use() && is_servicing() && !current_aircraft->is_low_on_fuel())
         {
             ++service_progress;
@@ -52,7 +52,7 @@ public:
     //TASK_2 Obj-2 D.5
     void refill_aircraft_if_needed(int& fuel_stock ){
 
-        if(current_aircraft != nullptr && current_aircraft->is_low_on_fuel()  && current_aircraft->at_terminal() ){
+        if(in_use() && current_aircraft->is_low_on_fuel()  && current_aircraft->at_terminal() ){
             current_aircraft->refill(fuel_stock);
         }
     }   

@@ -8,8 +8,8 @@
 #include <numeric>
 #include <type_traits>
 
-//TASK_4 Obj-2.1                TASK_4 Obj-2.7
-template<std::size_t dimension, typename Type,std::enable_if_t<std::is_arithmetic_v<Type>, bool> = true>
+//TASK_4 Obj-2.1                               TASK_4 Obj-2.7
+template<std::size_t dimension, typename Type, std::enable_if_t<std::is_arithmetic_v<Type>, bool> = true>
 class Point
 {
 

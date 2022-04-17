@@ -24,7 +24,7 @@ bool AircraftManager::move()
     // TASK_2 Obj-1 B.1
     aircrafts.erase(std::remove_if(aircrafts.begin(), aircrafts.end(), [this](auto& aircraft){
         try{
-            return !aircraft->move();
+            return !aircraft->move(); // Si aircraft->move renvoie false on doit retirer l'avion.
         }catch(AircraftCrash& e){
             this->aircrafts_crashed++; // TASK_3 Obj-1.2
             std::cerr << e.what() <<std::endl;// TASK_3 Obj-1.1
@@ -62,7 +62,6 @@ int AircraftManager::get_required_fuel() const{
     int sum = 0;
 
     std::for_each(aircrafts.begin(),aircrafts.end(),[&sum](auto& aircraft){
-
         if(aircraft->is_low_on_fuel() && aircraft->at_terminal()){
             sum += 3000 - aircraft->get_fuel();
         }
