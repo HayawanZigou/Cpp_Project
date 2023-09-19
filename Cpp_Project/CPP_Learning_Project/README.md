@@ -61,3 +61,7 @@ cd build
 cmake ..
 make
 ```
+### In Simulation
+Press C to add an aircraft.
+Press F to go fullscreen.
+Press Q or X to Quit.
